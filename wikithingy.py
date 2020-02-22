@@ -4,8 +4,6 @@ Antti Vilkman
 CT30A3401 Distributed Systems
 Wikipedia Shortest Path
 
-
-forked from https://github.com/ian-henderson/Wikipedia-Game
 """
 
 import os
@@ -64,7 +62,7 @@ def crawl_page(current, Q, G, target_page):
                     print('Path: ', end='')
                     print_path(G[link])
                     print()
-                    #input("aff: ")
+                    input("yes: ")
                     os._exit(1)
                     lock.release()
                 Q.append(G[link])
@@ -88,6 +86,7 @@ def crawl_page(current, Q, G, target_page):
                     print('Path: ', end='')
                     print_path(G[option])
                     print()
+                    input("yes: ")
                     os._exit(1)
                     lock.release()
                 Q.append(G[option])

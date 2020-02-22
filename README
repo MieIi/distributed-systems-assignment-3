@@ -1,0 +1,7 @@
+README:
+
+The program can be run by building the docker image. When running the container, the docker run command needs to be used with "--interactive" flag as the program requires user input to get the wikipedia page names.
+
+The program itself will ask the user for the start and goal pages. All the links in the start page are put into a queue, and for each of these links a worker thread will be created. Each worker will go through the page and add any unvisited links into the queue. Once all the workers have finished, threads will be created for that were added to the queue and they will again crawl through the pages. Once the target page has been found, the workers will stop and the path is printed into terminal.
+The program tracks the distance of the links from the starting page, and each link in a certain depth is crawled before progressing to the next. Using this method of breadth-first search ensures that the shortest path is found.
+The program prints the page that is currently being visited and its depth into the terminal as it crawls through the pages.
